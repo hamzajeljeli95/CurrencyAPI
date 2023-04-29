@@ -10,7 +10,7 @@ import java.io.IOException;
 @Service
 public class CurrencyService {
 
-    private static String ServiceURI = "https://theforexapi.com/api/latest?base=";
+    private static final String ServiceURI = "https://theforexapi.com/api/latest?base=";
 
     public RatesResponse getExchangeRatesForCommomCurrencies(Currency sourceCurrency, Float amount) throws IOException {
         RatesResponse R = Util.HttpGetRequest(ServiceURI + sourceCurrency, RatesResponse.class);
