@@ -1,5 +1,6 @@
 package tn.hamzajeljeli.mpdamexam.Controller;
 
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,7 @@ import tn.hamzajeljeli.mpdamexam.Models.RatesResponse;
 import tn.hamzajeljeli.mpdamexam.Service.CurrencyService;
 
 import java.io.IOException;
+import java.util.Date;
 
 @RestController
 @RequestMapping(value = "CurrencyExchange")
@@ -27,8 +29,18 @@ public class CurrencyController {
         return service.getExchangeRate(SourceCurrency, DestinationCurrency, Amount);
     }
 
-    @RequestMapping(value = "/ExchangeRate/Currencies/", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/Currencies/", method = RequestMethod.GET, produces = "application/json")
     public Currency[] AvailableCurrencies() {
         return service.AvailableCurrencies();
+    }
+
+    @RequestMapping(value = "/OldExchangeRates/{date}/{SourceCurrency}/{Amount}/", method = RequestMethod.GET, produces = "application/json")
+    public RatesResponse getExchangeRatesForCommomCurrencies(@ApiParam(example = "YYYY-MM-DD",value = "Minimum date is 1999-01-04") @PathVariable String date, @PathVariable Currency SourceCurrency, @PathVariable Float Amount) throws IOException {
+        return service.getOldExchangeRatesForCommomCurrencies(date,SourceCurrency, Amount);
+    }
+
+    @RequestMapping(value = "/OldExchangeRate/{date}/{SourceCurrency}/{DestinationCurrency}/{Amount}/", method = RequestMethod.GET, produces = "application/json")
+    public RatesResponse geOldtExchangeRate(@ApiParam(example = "YYYY-MM-DD",value = "Minimum date is 1999-01-04") @PathVariable String date, @PathVariable Currency SourceCurrency, @PathVariable Currency DestinationCurrency, @PathVariable Float Amount) throws IOException {
+        return service.getOldExchangeRate(date, SourceCurrency, DestinationCurrency, Amount);
     }
 }
