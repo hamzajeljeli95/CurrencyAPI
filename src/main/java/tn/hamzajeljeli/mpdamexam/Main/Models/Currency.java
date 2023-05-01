@@ -1,4 +1,4 @@
-package tn.hamzajeljeli.mpdamexam.Models;
+package tn.hamzajeljeli.mpdamexam.Main.Models;
 
 public enum Currency {
     EUR,

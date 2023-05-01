@@ -1,13 +1,11 @@
-package tn.hamzajeljeli.mpdamexam.Service;
+package tn.hamzajeljeli.mpdamexam.Main.Service;
 
 import org.springframework.stereotype.Service;
-import tn.hamzajeljeli.mpdamexam.Models.Currency;
-import tn.hamzajeljeli.mpdamexam.Models.RatesResponse;
-import tn.hamzajeljeli.mpdamexam.Utils.Util;
+import tn.hamzajeljeli.mpdamexam.Main.Models.Currency;
+import tn.hamzajeljeli.mpdamexam.Main.Models.RatesResponse;
+import tn.hamzajeljeli.mpdamexam.Main.Utils.Util;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @Service
 public class CurrencyService {

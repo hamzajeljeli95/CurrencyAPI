@@ -1,4 +1,4 @@
-package tn.hamzajeljeli.mpdamexam;
+package tn.hamzajeljeli.mpdamexam.Main;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

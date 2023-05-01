@@ -1,4 +1,4 @@
-package tn.hamzajeljeli.mpdamexam;
+package tn.hamzajeljeli.mpdamexam.Main;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

@@ -1,7 +1,7 @@
-package tn.hamzajeljeli.mpdamexam.Utils;
+package tn.hamzajeljeli.mpdamexam.Main.Utils;
 
 import com.google.gson.Gson;
-import tn.hamzajeljeli.mpdamexam.Models.RatesResponse;
+import tn.hamzajeljeli.mpdamexam.Main.Models.RatesResponse;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
